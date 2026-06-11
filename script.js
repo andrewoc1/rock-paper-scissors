@@ -1,9 +1,5 @@
-
 var humanScore = 0;
 var computerScore = 0;
-
-
-
 
 
 function getComputerChoice(){
@@ -13,57 +9,54 @@ function getComputerChoice(){
 	if (choice == 0){
 		valueChosen = "rock";
 	}else if(choice == 1){
-		valueChosen = "scissors";
-	}else{
 		valueChosen = "paper";
+	}else{
+		valueChosen = "scissors";
 	}
 
 	return valueChosen;
 }
 
 
-
-console.log(getComputerChoice());
 
 function getHumanChoice(){
-	let choice = prompt("Choose 1 for Rock, 2 for Scissors, and 3 for Paper!");
-	let valueChosen = "";
+	let choice = prompt("Choose rock, paper, or scissors!");
 	
-	if (choice == 1){
-		valueChosen = "rock";
-	}else if(choice == 2){
-		valueChosen = "scissors";
-	}else{
-		valueChosen = "paper";
-	}
-
-	return valueChosen;
+	return choice;
 }
 
 
-console.log((getHumanChoice()));
+
+function playRound(humanChoice, computerChoice){
+
+	humanChoice = humanChoice.toLowerCase();
+	
+	if (humanChoice == computerChoice){
+		console.log("Tie game. You both chose " + computerChoice + ".");
+	}else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
+		console.log("You win! " + humanChoice + " beats " + computerChoice + "!");
+		humanScore += 1;
+	}else{
+		console.log("You lose! " + humanChoice + " loses to " + computerChoice + "!");
+		computerScore += 1;
+	}
+
+}
 
 
 
+function playGame(){
 
+	let round = 1;
+	while (round <= 5){
+		playRound(getHumanChoice(), getComputerChoice());
+		console.log("Your score: " + humanScore + ". " + "Computer score: " + computerScore + ".");
+		round++;	
+	} 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+playGame();
 
 
 
