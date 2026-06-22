@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  background-image: url("images.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+}
+.buttonsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+.buttons {
+  padding: 12px 36px;
+  background-color: lightblue;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.resultsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+  gap: 100px;
+}
+.winner {
+  background-color: "lightblue";
+  color: "purple";
+}
